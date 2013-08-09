@@ -9,7 +9,7 @@ function get_foreignkey_value_{{ field_name}}() {
         return;
     }
     
-    $.get('{% url foreignkey_get handler=handler_name %}?object_id='+$('#id_{{ field_name }}').val(), function(data) {
+    $.get('{% url "foreignkey_get" handler=handler_name %}?object_id='+$('#id_{{ field_name }}').val(), function(data) {
         if (data.value == '') {
             $('#id_{{ field_name }}').val('');
             $('#value_{{ field_name }}').html('-- {% trans 'no object selected' %} --');
