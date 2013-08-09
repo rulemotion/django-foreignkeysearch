@@ -50,7 +50,7 @@ $(document).ready(function() {
         $(this).attr('disabled', true).text('{% trans 'Loading' %}...');
         // Send ajax request
         formdata = $('#container_{{ field_name}} :input').serialize();
-        $.post('{% url foreignkey_search handler=handler_name %}?field={{ field_name }}', formdata, function(data) {
+        $.post('{% url "foreignkey_search" handler=handler_name %}?field={{ field_name }}', formdata, function(data) {
             // Display results
             s = '';
             $('#results_panel_{{ field_name }}').html('').hide();
